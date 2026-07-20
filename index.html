@@ -176,7 +176,7 @@
     cursor: pointer;
     padding: 10px 12px;
     min-width: 44px;
-    min-height: 52px;
+    min-height: 62px;
     border-radius: 3px;
     font-family: var(--font-ui);
     color: var(--bar-ink);
@@ -191,17 +191,16 @@
   .band .name{
     font-size: 13px;
     font-weight: 700;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    overflow-wrap: break-word;
     letter-spacing: 0.01em;
+    line-height: 1.2;
   }
   .band .count{
     font-size: 11px;
     opacity: 0.85;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    overflow-wrap: break-word;
   }
   .band.placeholder{
     background: var(--paper-raised);
