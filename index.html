@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Tipline submissions — where businesses feel the pinch</title>
+<title>What businesses told the Ministry for Regulation</title>
 <style>
   :root{
     --paper: #ffffff;
@@ -16,6 +16,7 @@
     --focus: #d20000;
 
     --bar: #636f7b;
+    --bar-sub: #9aa1a9;
     --bar-active: #d98880;
     --bar-ink: #f4f7f3;
 
@@ -215,6 +216,7 @@
   .band.placeholder:hover{ filter: none; }
 
   .row-sub .band .name{ font-size: 12.5px; }
+  .row-sub .band{ color: #2d2d2d; }
 
   .panel{
     border-top: 1px solid var(--line);
@@ -445,7 +447,7 @@ function renderSubRow(){
     const btn = document.createElement('button');
     btn.className = 'band';
     btn.setAttribute('aria-pressed', String(selected));
-    btn.style.setProperty('--band-color', selected ? 'var(--bar-active)' : 'var(--bar)');
+    btn.style.setProperty('--band-color', selected ? 'var(--bar-active)' : 'var(--bar-sub)');
     btn.style.flexGrow = sub.titles.length;
     btn.title = `${sub.name} — ${fmt(sub.titles.length)} submissions`;
     btn.innerHTML = `<span class="name">${sub.name}</span><span class="count">${fmt(sub.titles.length)} submissions</span>`;
