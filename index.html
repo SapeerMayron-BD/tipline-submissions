@@ -527,17 +527,19 @@ function reportHeight(){
       + parseFloat(getComputedStyle(document.getElementById('app')).paddingTop)
       + parseFloat(getComputedStyle(document.getElementById('app')).paddingBottom);
     try {
-      window.parent.postMessage({ type: 'tipline-viz-height', height: Math.ceil(h) }, '*');
+      window.parent.postMessage({ iframeHeight: Math.ceil(h) }, '*');
     } catch (e) {}
   });
 }
 
 initStats();
 render();
+window.addEventListener('load', reportHeight);
 window.addEventListener('resize', reportHeight);
 if (window.ResizeObserver){
   new ResizeObserver(reportHeight).observe(document.getElementById('app'));
 }
+reportHeight();
 </script>
 </body>
 </html>
